@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Task>
+    <Id>ExportFare</Id>
+    <Type>ExportFare</Type>
+  </Task>
+  <Task>
+    <Id>Individual</Id>
+    <Type>Fare</Type>
+  </Task>
+  <Task>
+    <Id>Basic</Id>
+    <Type>Fare</Type>
+  </Task>
+  <Task>
+    <Id>Costa</Id>
+    <Type>Fare</Type>
+  </Task>
+  <Task>
+    <Id>Itinerary</Id>
+    <Type>Itinerary</Type>
+  </Task>
+  <Task>
+    <Id>Ship</Id>
+    <Type>Ship</Type>
+  </Task>
+</ArrayOfTask>

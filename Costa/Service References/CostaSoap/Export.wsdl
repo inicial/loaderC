@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.costacrociere.com/WebAffiliation" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schemas.costacrociere.com/WebAffiliation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.costacrociere.com/WebAffiliation">
+      <s:element name="ExportDestination">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportDestinationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportDestinationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Agency" type="tns:Agency" />
+      <s:complexType name="Agency">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="Partner" type="tns:Partner" />
+      <s:complexType name="Partner">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ExportPrice">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExportPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportPriceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportPriceWithPaxBreakdown">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="expPriceType" type="tns:ExportPriceType" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxOccupancy" type="tns:MaxOccupancy" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ExportPriceType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Individual" />
+          <s:enumeration value="HoneyMoon" />
+          <s:enumeration value="Roulette" />
+          <s:enumeration value="Bst" />
+          <s:enumeration value="Value" />
+          <s:enumeration value="PInd" />
+          <s:enumeration value="Light" />
+          <s:enumeration value="Valueai" />
+          <s:enumeration value="Costa" />
+          <s:enumeration value="Basic" />
+          <s:enumeration value="Carrefou" />
+          <s:enumeration value="Leclerc" />
+          <s:enumeration value="Selecta" />
+          <s:enumeration value="Spechvs" />
+          <s:enumeration value="Promo" />
+          <s:enumeration value="Valuebev" />
+          <s:enumeration value="CWelcome" />
+          <s:enumeration value="Welcome" />
+          <s:enumeration value="CGeo" />
+          <s:enumeration value="Geo" />
+          <s:enumeration value="Colectiv" />
+          <s:enumeration value="ECosta" />
+          <s:enumeration value="EBasic" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="MaxOccupancy">
+        <s:restriction base="s:string">
+          <s:enumeration value="TwoPax" />
+          <s:enumeration value="ThreePax" />
+          <s:enumeration value="FourPax" />
+          <s:enumeration value="FivePax" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ExportPriceWithPaxBreakdownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportPriceWithPaxBreakdownResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportPriceDetailed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="expPriceType" type="tns:ExportPriceType" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxOccupancy" type="tns:MaxOccupancy" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportPriceDetailedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportPriceDetailedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportGroupPriceWithPaxBreakdown">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxOccupancy" type="tns:MaxOccupancy" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportGroupPriceWithPaxBreakdownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportGroupPriceWithPaxBreakdownResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportTravelAgentPriceWithPaxBreakdown">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxOccupancy" type="tns:MaxOccupancy" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportTravelAgentPriceWithPaxBreakdownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportTravelAgentPriceWithPaxBreakdownResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportPriceWithDestination">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="expPriceType" type="tns:ExportPriceType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportPriceWithDestinationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportPriceWithDestinationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportCatalog">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExportCatalogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportCatalogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportRoulette">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExportRouletteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportRouletteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportAvailability">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExportAvailabilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportAvailabilityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportFare">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportFareResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportFareResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportShipsAndCategories">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExportShipsAndCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportShipsAndCategoriesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportPorts">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExportPortsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportPortsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportItineraryAndSteps">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportItineraryAndStepsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportItineraryAndStepsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcursions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="destinationCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cruiseCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcursionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcursionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ExportDestinationSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportDestination" />
+  </wsdl:message>
+  <wsdl:message name="ExportDestinationSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportDestinationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportDestinationAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportDestinationPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportPrice" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportPricePartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceWithPaxBreakdownSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportPriceWithPaxBreakdown" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceWithPaxBreakdownSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportPriceWithPaxBreakdownResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceWithPaxBreakdownAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceWithPaxBreakdownPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceDetailedSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportPriceDetailed" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceDetailedSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportPriceDetailedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceDetailedAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceDetailedPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportGroupPriceWithPaxBreakdownSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportGroupPriceWithPaxBreakdown" />
+  </wsdl:message>
+  <wsdl:message name="ExportGroupPriceWithPaxBreakdownSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportGroupPriceWithPaxBreakdownResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportGroupPriceWithPaxBreakdownAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportGroupPriceWithPaxBreakdownPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportTravelAgentPriceWithPaxBreakdownSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportTravelAgentPriceWithPaxBreakdown" />
+  </wsdl:message>
+  <wsdl:message name="ExportTravelAgentPriceWithPaxBreakdownSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportTravelAgentPriceWithPaxBreakdownResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportTravelAgentPriceWithPaxBreakdownAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportTravelAgentPriceWithPaxBreakdownPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceWithDestinationSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportPriceWithDestination" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceWithDestinationSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportPriceWithDestinationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceWithDestinationAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportPriceWithDestinationPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportCatalogSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportCatalog" />
+  </wsdl:message>
+  <wsdl:message name="ExportCatalogSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportCatalogAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportCatalogPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportRouletteSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportRoulette" />
+  </wsdl:message>
+  <wsdl:message name="ExportRouletteSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportRouletteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportRouletteAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportRoulettePartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportAvailabilitySoapIn">
+    <wsdl:part name="parameters" element="tns:ExportAvailability" />
+  </wsdl:message>
+  <wsdl:message name="ExportAvailabilitySoapOut">
+    <wsdl:part name="parameters" element="tns:ExportAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportAvailabilityAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportAvailabilityPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportFareSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportFare" />
+  </wsdl:message>
+  <wsdl:message name="ExportFareSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportFareResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportFareAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportFarePartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportShipsAndCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportShipsAndCategories" />
+  </wsdl:message>
+  <wsdl:message name="ExportShipsAndCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportShipsAndCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportShipsAndCategoriesAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportShipsAndCategoriesPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportPortsSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportPorts" />
+  </wsdl:message>
+  <wsdl:message name="ExportPortsSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportPortsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportPortsAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportPortsPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportItineraryAndStepsSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportItineraryAndSteps" />
+  </wsdl:message>
+  <wsdl:message name="ExportItineraryAndStepsSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportItineraryAndStepsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportItineraryAndStepsAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportItineraryAndStepsPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcursionsSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcursions" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcursionsSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcursionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcursionsAgency">
+    <wsdl:part name="Agency" element="tns:Agency" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcursionsPartner">
+    <wsdl:part name="Partner" element="tns:Partner" />
+  </wsdl:message>
+  <wsdl:portType name="ExportSoap">
+    <wsdl:operation name="ExportDestination">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export a destination of a catalog, all its itineraries and cruises</wsdl:documentation>
+      <wsdl:input message="tns:ExportDestinationSoapIn" />
+      <wsdl:output message="tns:ExportDestinationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportPrice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export price category for all cruises</wsdl:documentation>
+      <wsdl:input message="tns:ExportPriceSoapIn" />
+      <wsdl:output message="tns:ExportPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportPriceWithPaxBreakdown">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export price category for all cruises with all passenger info</wsdl:documentation>
+      <wsdl:input message="tns:ExportPriceWithPaxBreakdownSoapIn" />
+      <wsdl:output message="tns:ExportPriceWithPaxBreakdownSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportPriceDetailed">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export price category for all cruises with all passenger info</wsdl:documentation>
+      <wsdl:input message="tns:ExportPriceDetailedSoapIn" />
+      <wsdl:output message="tns:ExportPriceDetailedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportGroupPriceWithPaxBreakdown">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export group related price category for all cruises with all passenger info</wsdl:documentation>
+      <wsdl:input message="tns:ExportGroupPriceWithPaxBreakdownSoapIn" />
+      <wsdl:output message="tns:ExportGroupPriceWithPaxBreakdownSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportTravelAgentPriceWithPaxBreakdown">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export travel agent related price category for all cruises with all passenger info</wsdl:documentation>
+      <wsdl:input message="tns:ExportTravelAgentPriceWithPaxBreakdownSoapIn" />
+      <wsdl:output message="tns:ExportTravelAgentPriceWithPaxBreakdownSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportPriceWithDestination">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export price category for all cruises and for destination</wsdl:documentation>
+      <wsdl:input message="tns:ExportPriceWithDestinationSoapIn" />
+      <wsdl:output message="tns:ExportPriceWithDestinationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportCatalog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export a destination of a catalog, all its itineraries and cruises</wsdl:documentation>
+      <wsdl:input message="tns:ExportCatalogSoapIn" />
+      <wsdl:output message="tns:ExportCatalogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportRoulette">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export all the roulette cruises with the associated cruises</wsdl:documentation>
+      <wsdl:input message="tns:ExportRouletteSoapIn" />
+      <wsdl:output message="tns:ExportRouletteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportAvailability">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export all cruises availability</wsdl:documentation>
+      <wsdl:input message="tns:ExportAvailabilitySoapIn" />
+      <wsdl:output message="tns:ExportAvailabilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportFare">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export all fares for a cruise</wsdl:documentation>
+      <wsdl:input message="tns:ExportFareSoapIn" />
+      <wsdl:output message="tns:ExportFareSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportShipsAndCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export all ships and categories</wsdl:documentation>
+      <wsdl:input message="tns:ExportShipsAndCategoriesSoapIn" />
+      <wsdl:output message="tns:ExportShipsAndCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportPorts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export all ports</wsdl:documentation>
+      <wsdl:input message="tns:ExportPortsSoapIn" />
+      <wsdl:output message="tns:ExportPortsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportItineraryAndSteps">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export all itineraries and steps</wsdl:documentation>
+      <wsdl:input message="tns:ExportItineraryAndStepsSoapIn" />
+      <wsdl:output message="tns:ExportItineraryAndStepsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcursions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export all excursions for cruiseCode or destinationCode</wsdl:documentation>
+      <wsdl:input message="tns:ExportExcursionsSoapIn" />
+      <wsdl:output message="tns:ExportExcursionsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExportSoap" type="tns:ExportSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExportDestination">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportDestination" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportDestinationAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportDestinationPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPrice">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportPriceAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportPricePartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPriceWithPaxBreakdown">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportPriceWithPaxBreakdown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportPriceWithPaxBreakdownAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportPriceWithPaxBreakdownPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPriceDetailed">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportPriceDetailed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportPriceDetailedAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportPriceDetailedPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportGroupPriceWithPaxBreakdown">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportGroupPriceWithPaxBreakdown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportGroupPriceWithPaxBreakdownAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportGroupPriceWithPaxBreakdownPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportTravelAgentPriceWithPaxBreakdown">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportTravelAgentPriceWithPaxBreakdown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportTravelAgentPriceWithPaxBreakdownAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportTravelAgentPriceWithPaxBreakdownPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPriceWithDestination">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportPriceWithDestination" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportPriceWithDestinationAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportPriceWithDestinationPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportCatalog">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportCatalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportCatalogAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportCatalogPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportRoulette">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportRoulette" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportRouletteAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportRoulettePartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportAvailability">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportAvailabilityAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportAvailabilityPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportFare">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportFare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportFareAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportFarePartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportShipsAndCategories">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportShipsAndCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportShipsAndCategoriesAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportShipsAndCategoriesPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPorts">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportPorts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportPortsAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportPortsPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportItineraryAndSteps">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportItineraryAndSteps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportItineraryAndStepsAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportItineraryAndStepsPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcursions">
+      <soap:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportExcursions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExportExcursionsAgency" part="Agency" use="literal" />
+        <soap:header message="tns:ExportExcursionsPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExportSoap12" type="tns:ExportSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExportDestination">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportDestination" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportDestinationAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportDestinationPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPrice">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportPriceAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportPricePartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPriceWithPaxBreakdown">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportPriceWithPaxBreakdown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportPriceWithPaxBreakdownAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportPriceWithPaxBreakdownPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPriceDetailed">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportPriceDetailed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportPriceDetailedAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportPriceDetailedPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportGroupPriceWithPaxBreakdown">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportGroupPriceWithPaxBreakdown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportGroupPriceWithPaxBreakdownAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportGroupPriceWithPaxBreakdownPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportTravelAgentPriceWithPaxBreakdown">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportTravelAgentPriceWithPaxBreakdown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportTravelAgentPriceWithPaxBreakdownAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportTravelAgentPriceWithPaxBreakdownPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPriceWithDestination">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportPriceWithDestination" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportPriceWithDestinationAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportPriceWithDestinationPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportCatalog">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportCatalogAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportCatalogPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportRoulette">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportRoulette" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportRouletteAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportRoulettePartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportAvailability">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportAvailability" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportAvailabilityAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportAvailabilityPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportFare">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportFare" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportFareAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportFarePartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportShipsAndCategories">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportShipsAndCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportShipsAndCategoriesAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportShipsAndCategoriesPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPorts">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportPorts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportPortsAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportPortsPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportItineraryAndSteps">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportItineraryAndSteps" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportItineraryAndStepsAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportItineraryAndStepsPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcursions">
+      <soap12:operation soapAction="http://schemas.costacrociere.com/WebAffiliation/ExportExcursions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExportExcursionsAgency" part="Agency" use="literal" />
+        <soap12:header message="tns:ExportExcursionsPartner" part="Partner" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Export">
+    <wsdl:port name="ExportSoap" binding="tns:ExportSoap">
+      <soap:address location="http://www.costaclick.net/WAWS_1_9/Export.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExportSoap12" binding="tns:ExportSoap12">
+      <soap12:address location="http://www.costaclick.net/WAWS_1_9/Export.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

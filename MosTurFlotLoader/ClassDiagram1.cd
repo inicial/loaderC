@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MosTurFlotLoader.ShipRequest" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAAAAAAAAAAAEAAACAAQAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.RoutDetailRequest" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAAAAAAAAAAAEAAACAAQAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.Ship" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAEBAEAAFAAgAAEAAAAACAAAAEAAQAI=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.Cabin" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAQAQIAAAIACAAAAAAAAgACAAEAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.Request" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAACAAAAAACACAAACACAAAAABAAAQAAAA=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.HelperClass" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAAAAAAAAAAIEAAACAAQAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.RouteDetail" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAQAAAAAAAAgAAAIAAEAAAIAAAAAAwAAAAA=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.Excursion" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAABAABAAAAAAAAAAAA=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.TourTariff" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACBAAAAAAAAAAAMAEAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.CategoryTariffs" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAIgAAAAAAAAAAAABAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.Meal" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAEBgAAAAAAAAAQAAAA=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.Cruise" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEAAAADAAJEAAAEAFECBAAAAAAASCAAAAAAAAAACAA=</HashCode>
+      <FileName>HelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.MosTurFlotCruiseLoader" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAgAAAAAAQAAAAAAAAAAASEAAAAAAIAgA=</HashCode>
+      <FileName>MosTurFlotCruiseLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.MosTurFlotDataManipulator" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BDAAIAIQWAAAiAAAIFRUCAAICAEEAAAAAABAAAAABAA=</HashCode>
+      <FileName>MosTurFlotDataManipulator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MosTurFlotLoader.Program" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
